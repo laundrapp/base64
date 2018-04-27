@@ -13,6 +13,11 @@
 #endif
 #undef RESTRICT_NetIharderBase64
 
+#if __has_feature(nullability)
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wnullability-completeness"
+#endif
+
 #if !defined (NetIharderBase64_) && (INCLUDE_ALL_NetIharderBase64 || defined(INCLUDE_NetIharderBase64))
 #define NetIharderBase64_
 
@@ -511,7 +516,7 @@ J2OBJC_TYPE_LITERAL_HEADER(NetIharderBase64)
  @param inArg the  <tt> java.io.InputStream </tt>  from which to read data.
  @since 1.3
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg;
 
 /*!
  @brief Constructs a <code>Base64.InputStream</code> in
@@ -533,8 +538,8 @@ J2OBJC_TYPE_LITERAL_HEADER(NetIharderBase64)
  - seealso: Base64#DO_BREAK_LINES
  @since 2.0
  */
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
-                                  withInt:(jint)options;
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
+                                            withInt:(jint)options;
 
 /*!
  @brief Reads enough of the input stream to convert
@@ -605,7 +610,7 @@ J2OBJC_TYPE_LITERAL_HEADER(NetIharderBase64_InputStream)
  @param outArg the  <tt> java.io.OutputStream </tt>  to which data will be written.
  @since 1.3
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg;
 
 /*!
  @brief Constructs a <code>Base64.OutputStream</code> in
@@ -627,8 +632,8 @@ J2OBJC_TYPE_LITERAL_HEADER(NetIharderBase64_InputStream)
  - seealso: Base64#DO_BREAK_LINES
  @since 1.3
  */
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                                   withInt:(jint)options;
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                                             withInt:(jint)options;
 
 /*!
  @brief Flushes and closes (I think, in the superclass) the stream.
@@ -713,4 +718,8 @@ J2OBJC_TYPE_LITERAL_HEADER(NetIharderBase64_OutputStream)
 
 #endif
 
+
+#if __has_feature(nullability)
+#pragma clang diagnostic pop
+#endif
 #pragma pop_macro("INCLUDE_ALL_NetIharderBase64")

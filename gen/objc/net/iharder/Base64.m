@@ -912,13 +912,13 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(NetIharderBase64)
 
 @implementation NetIharderBase64_InputStream
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg {
   NetIharderBase64_InputStream_initWithJavaIoInputStream_(self, inArg);
   return self;
 }
 
-- (instancetype)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
-                                  withInt:(jint)options {
+- (instancetype __nonnull)initWithJavaIoInputStream:(JavaIoInputStream *)inArg
+                                            withInt:(jint)options {
   NetIharderBase64_InputStream_initWithJavaIoInputStream_withInt_(self, inArg, options);
   return self;
 }
@@ -1061,13 +1061,13 @@ J2OBJC_CLASS_TYPE_LITERAL_SOURCE(NetIharderBase64_InputStream)
 
 @implementation NetIharderBase64_OutputStream
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg {
   NetIharderBase64_OutputStream_initWithJavaIoOutputStream_(self, outArg);
   return self;
 }
 
-- (instancetype)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
-                                   withInt:(jint)options {
+- (instancetype __nonnull)initWithJavaIoOutputStream:(JavaIoOutputStream *)outArg
+                                             withInt:(jint)options {
   NetIharderBase64_OutputStream_initWithJavaIoOutputStream_withInt_(self, outArg, options);
   return self;
 }
